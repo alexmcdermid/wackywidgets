@@ -15,11 +15,12 @@
     {% else %}
         {%for widget in widgets%}
             {{widget}}
+            <br>
         {%endfor%}    
     {% endif %}
     <hr>
     <h4>Add Widget</h4>
-    <form method="post" class="pure-form">
+    <form action="{% url 'handleForm' %}" method="post" class="pure-form">
         {% csrf_token %}
         {{ widgetForm.as_p }}
         <input type="submit" class="pure-button" value="ADD WIDGET">
