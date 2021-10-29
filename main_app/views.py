@@ -1,4 +1,6 @@
 from django.shortcuts import render
+from .forms import WidgetForm
 
 def index(request):
-  return render(request, 'index.html')
+    widgetForm = WidgetForm()
+    return render(request, 'index.html',{'widgetForm':widgetForm})

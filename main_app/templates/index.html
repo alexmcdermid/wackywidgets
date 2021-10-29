@@ -15,14 +15,21 @@
     {% else %}
     
     {% endif %}
+    <hr>
     <h4>Add Widget</h4>
-    <form class="pure-form" method="POST" action="">
+    <form method="post" class="pure-form">
+        {% csrf_token %}
+        {{ widgetForm.as_p }}
+        <input type="submit" class="pure-button" value="ADD WIDGET">
+    </form>
+    <!-- non views form -->
+    <!-- <form class="pure-form" method="POST" action="">
         {% csrf_token %}
         Description: <input description="description">
         <br>
         Quantity: <input quantity="quantity">
         <br>
         <button class="pure-button" type="submit">ADD WIDGET</button>
-    </form>
+    </form> -->
 </body>
 </html>
