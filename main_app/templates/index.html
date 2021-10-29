@@ -10,5 +10,19 @@
 </head>
 <body>
     <h1>Wacky Widgets</h1>
+    {% if widget_list|length == 0 %}
+    <h3>No Widgets Exist</h3>
+    {% else %}
+    
+    {% endif %}
+    <h4>Add Widget</h4>
+    <form class="pure-form" method="POST" action="">
+        {% csrf_token %}
+        Description: <input description="description">
+        <br>
+        Quantity: <input quantity="quantity">
+        <br>
+        <button class="pure-button" type="submit">ADD WIDGET</button>
+    </form>
 </body>
 </html>
