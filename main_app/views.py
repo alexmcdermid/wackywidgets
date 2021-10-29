@@ -13,3 +13,7 @@ def handleForm(request):
         newWidget = form.save()
         newWidget.save()
     return redirect('index')
+
+def delete(request, widget_id):
+    Widget.objects.filter(id=widget_id).delete()
+    return redirect('index')
